@@ -1,4 +1,4 @@
-![unsolved_logo](https://user-images.githubusercontent.com/63718762/107854414-4b87c880-6e24-11eb-986d-f858cb1974ca.png)
+![unsolved logo](https://user-images.githubusercontent.com/63718807/108234984-0a5a2600-714e-11eb-91f4-d04868b405e6.png)
 
 # Hello, we are team (un)solved!
 ***
