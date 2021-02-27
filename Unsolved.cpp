@@ -79,26 +79,26 @@ int main()
 
 			switch (number) {
 			case 1: {
-						type_text("You type some keywords to see if he has searched for a person, a weapon, anything that could be involved in the case. You don't find anything in particular so you decide to see who he has been texting. You find a person that he has been texting almost everyday - Emily Donelly. Apparently that is his daughter that studies at a university in London. He has been sending her money for her university so maybe that's why his apartment was in such a miserable state");
+				type_text("You type some keywords to see if he has searched for a person, a weapon, anything that could be involved in the case. You don't find anything in particular so you decide to see who he has been texting. You find a person that he has been texting almost everyday - Emily Donelly. Apparently that is his daughter that studies at a university in London. He has been sending her money for her university so maybe that's why his apartment was in such a miserable state");
 
-						cout << endl << flush;
-						system("cls");
-						break;
+				cout << endl << flush;
+				system("cls");
+				break;
 			}
 
 			case 2: {
-						type_text("You look through his history and you find out that he has been talking to somebody. He has been talking to Emily Donelly. Apparently that is his daughter that studies at a university in London. He has been sending her money for her university so maybe that's why his apartment was in such a miserable state.");
+				type_text("You look through his history and you find out that he has been talking to somebody. He has been talking to Emily Donelly. Apparently that is his daughter that studies at a university in London. He has been sending her money for her university so maybe that's why his apartment was in such a miserable state.");
 
-						cout << endl << flush;
-						system("cls");
-						break;
+				cout << endl << flush;
+				system("cls");
+				break;
 			}
 
 			case 3: {
-						type_text("You decide to look through his folders. Unfortunately there is nothing interesting.");
+				type_text("You decide to look through his folders. Unfortunately there is nothing interesting.");
 
-						cout << endl << flush;
-						system("cls");
+				cout << endl << flush;
+				system("cls");
 			}
 			}
 
