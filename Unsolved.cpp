@@ -3,6 +3,7 @@
 #include <thread>
 #include <string>
 #include <stdio.h>
+#include <Windows.h>
 
 using namespace std;
 
@@ -17,12 +18,81 @@ void type_text(const string text)
 		cout << text[i] << flush;
 
 		// sleep for 40 milliseconds
-		this_thread::sleep_for(chrono::milliseconds(0));
+		this_thread::sleep_for(chrono::milliseconds(20));
 	}
 }
 
-int main()
-{
+void menu() {
+
+	system("Color 8F");
+
+	cout << setw(87) << " _    _ _   _  _____  ____  _ __      ________ _____  " << endl;
+	cout << setw(87) << "| |  | | \\ | |/ ____|/ __ \\| |\\ \\    / /  ____|  __ \\ " << endl;
+	cout << setw(87) << "| |  | |  \\| | (___ | |  | | | \\ \\  / /| |__  | |  | |" << endl;
+	cout << setw(87) << "| |  | | . ` |\\___ \\| |  | | |  \\ \\/ / |  __| | |  | |" << endl;
+	cout << setw(87) << "| |__| | |\\  |____) | |__| | |___\\  /  | |____| |__| |" << endl;
+	cout << setw(87) << " \\____/|_| \\_|_____/ \\____/|______\\\/   |______|_____/ " << endl;
+
+	cout << setw(71) << " _____________________" << endl;
+	cout << setw(72) << "|                     |" << endl;
+	cout << setw(72) << "|        START        |" << endl;
+	cout << setw(72) << "|_____________________|" << endl;
+
+
+	cout << setw(71) << " _____________________" << endl;
+	cout << setw(72) << "|                     |" << endl;
+	cout << setw(72) << "|     HOW TO PLAY     |" << endl;
+	cout << setw(72) << "|_____________________|" << endl;
+
+	cout << setw(71) << " _____________________" << endl;
+	cout << setw(72) << "|                     |" << endl;
+	cout << setw(72) << "|      EXIT GAME      |" << endl;
+	cout << setw(72) << "|_____________________|" << endl;
+
+}
+
+void menuSolved() {
+	cout << setw(83) << "_____   ____   _  __      __ ______  _____ " << endl;
+	cout << setw(84) << " / ____| / __ \\ | | \\ \\    / /|  ____||  __ \\ " << endl;
+	cout << setw(84) << "| (___  | |  | || |  \\ \\  / / | |__   | |  | |" << endl;
+	cout << setw(84) << " \\___ \\ | |  | || |   \\ \\/ /  |  __|  | |  | |" << endl;
+	cout << setw(84) << "  ___) || |__| || |____\\  /   | |____ | |__| |" << endl;
+	cout << setw(84) << "|_____/  \\____/ |______|\\/    |______||_____/ " << endl;
+
+	cout << setw(71) << " _____________________" << endl;
+	cout << setw(72) << "|                     |" << endl;
+	cout << setw(72) << "|        START        |" << endl;
+	cout << setw(72) << "|_____________________|" << endl;
+
+
+	cout << setw(71) << " _____________________" << endl;
+	cout << setw(72) << "|                     |" << endl;
+	cout << setw(72) << "|     HOW TO PLAY     |" << endl;
+	cout << setw(72) << "|_____________________|" << endl;
+
+	cout << setw(71) << " _____________________" << endl;
+	cout << setw(72) << "|                     |" << endl;
+	cout << setw(72) << "|      EXIT GAME      |" << endl;
+	cout << setw(72) << "|_____________________|" << endl;
+
+}
+
+void howToPlay() {
+	cout << endl << flush;
+	system("cls");
+	type_text("The rules are simple. You have to pay attention to the story and take notes in order to find the murderer. You will have to either type yes or no to investigate the item or to pick it up. If you skip way too many items or don't pay attention to the story the case will remain unsolved.");
+
+}
+
+bool exitGame() {
+	return 0;
+}
+
+void startGame() {
+	cout << endl << flush;
+	system("cls");
+
+	system("Color 8F");
 	type_text("On O'Connell Street, 15th Sept 2016, in one of the apartments, the neighbour of Fred Donelly - a man that has been living alone for many years and rarely goes out, this is at least how Mrs Weston described him (his neighbour), was killed.");
 
 	cout << endl;
@@ -31,12 +101,14 @@ int main()
 	int yesAnswers = 0;
 	int rightAnswer = 0;
 
+
 	type_text("She sent a report to the police about a strange smell coming from his apartment. She also told them that he hasn't left his apartment for a week, but that was nothing new she said. The police went to his apartment and found the cause of the strange smell. Apparently, Mr Donelly has been killed. By the stab wounds, it was clear that it wasn't a suicide. They've been gathering evidence for three years now but the case has remained unsolved - why was he killed and who was the murderer. They needed help, so they asked you to investigate the case.");
-
 	cout << endl;
-	cout << setw(45) << "| 11 may 2019 |" << endl;
-
+	cout << endl;
+	cout << setw(65) << "| 11 may 2019 |" << endl;
+	cout << endl;
 	cout << "You're in front of Mr Donelly's door. Open the door? (Enter either 'yes' or 'no')" << endl;
+
 	string answerDoor;
 	cin >> answerDoor;
 
@@ -70,6 +142,7 @@ int main()
 			cout << "2. look through his history" << endl;
 			cout << "3. look through his computer files" << endl;
 
+			cout << "Your choice: ";
 			int number;
 			cin >> number;
 
@@ -79,26 +152,26 @@ int main()
 
 			switch (number) {
 			case 1: {
-				type_text("You type some keywords to see if he has searched for a person, a weapon, anything that could be involved in the case. You don't find anything in particular so you decide to see who he has been texting. You find a person that he has been texting almost everyday - Emily Donelly. Apparently that is his daughter that studies at a university in London. He has been sending her money for her university so maybe that's why his apartment was in such a miserable state");
+						type_text("You type some keywords to see if he has searched for a person, a weapon, anything that could be involved in the case. You don't find anything in particular so you decide to see who he has been texting. You find a person that he has been texting almost everyday - Emily Donelly. Apparently that is his daughter that studies at a university in London. He has been sending her money for her university so maybe that's why his apartment was in such a miserable state");
 
-				cout << endl << flush;
-				system("cls");
-				break;
+						cout << endl << flush;
+						system("cls");
+						break;
 			}
 
 			case 2: {
-				type_text("You look through his history and you find out that he has been talking to somebody. He has been talking to Emily Donelly. Apparently that is his daughter that studies at a university in London. He has been sending her money for her university so maybe that's why his apartment was in such a miserable state.");
+						type_text("You look through his history and you find out that he has been talking to somebody. He has been talking to Emily Donelly. Apparently that is his daughter that studies at a university in London. He has been sending her money for her university so maybe that's why his apartment was in such a miserable state.");
 
-				cout << endl << flush;
-				system("cls");
-				break;
+						cout << endl << flush;
+						system("cls");
+						break;
 			}
 
 			case 3: {
-				type_text("You decide to look through his folders. Unfortunately there is nothing interesting.");
+						type_text("You decide to look through his folders. Unfortunately there is nothing interesting.");
 
-				cout << endl << flush;
-				system("cls");
+						cout << endl << flush;
+						system("cls");
 			}
 			}
 
@@ -120,27 +193,28 @@ int main()
 				type_text("There is nothing else in the room so you decide to go to his bedroom. You see a big pile of books on his bed. ");
 				noAnswers++;
 			}
-
+			cout << endl;
 			cout << setw(62) << "Do you want to look through them? (Enter either 'yes' or 'no')" << endl;
 			string answerBooks;
 			cin >> answerBooks;
 			if (answerBooks == "no") {
 
 				cout << setw(62) << "*You look through the room and find a note on the side of the bed*" << endl;
-
+				cout << endl;
 				cout << setw(62) << "Do you want to read it? (Enter either 'yes' or 'no')" << endl;
 				noAnswers++;
 			}
 
 			if (answerBooks == "yes") {
+				cout << endl;
 				type_text("You read a few pages of one of the books and decide to look at the author's name. The author's name is Fred Donelly. You find out that he is a writer and that's why he almost never goes out. With the amount of money he has been making he had to choose whether to help his daughter out or take care of himself. The choice was obvious, he cared with all his heart for his daughter so he decided to help her out till she graduates, gets a job and comes back to him so they can meet after years of being seperated.");
 				cout << endl;
 				yesAnswers++;
+				cout << endl;
+				cout << setw(72) << "*You close the book*" << endl;
+				cout << setw(95) << "*You look through the room and find a note on the side of the bed*" << endl;
 
-				cout << setw(62) << "*You close the book*" << endl;
-				cout << setw(62) << "*You look through the room and find a note on the side of the bed*" << endl;
-
-				cout << setw(62) << "Do you want to read it? (Enter either 'yes' or 'no')" << endl;
+				cout << setw(89) << "Do you want to read it? (Enter either 'yes' or 'no')" << endl;
 			}
 
 
@@ -151,7 +225,9 @@ int main()
 			system("cls");
 
 			if (answerRead == "no") {
-				type_text("You search every nook and cranny. You find something under the bed. Do you reach and get it? (Enter either 'yes' or 'no')");
+				type_text("You search every nook and cranny. You find something under the bed.");
+				cout << endl;
+				cout << "Do you reach and get it? (Enter either 'yes' or 'no')";
 				noAnswers++;
 				string getItem;
 				cin >> getItem;
@@ -162,7 +238,9 @@ int main()
 				cout << endl;
 				type_text("Who was 'him' you wondered...");
 				yesAnswers++;
-				type_text("You search every nook and cranny. You find something under the bed. Do you reach and get it? (Enter either 'yes' or 'no')");
+				type_text("You search every nook and cranny. You find something under the bed.");
+				cout << endl;
+				cout << "Do you reach and get it? (Enter either 'yes' or 'no')";
 				string getItem;
 				cin >> getItem;
 
@@ -214,6 +292,8 @@ int main()
 					cout << endl;
 
 					type_text("There is nothing else in the diary. It wasn't used often.");
+					cout << endl;
+					system("pause");
 					cout << endl << flush;
 					system("cls");
 
@@ -284,6 +364,7 @@ int main()
 
 							type_text("Chris' behavior during the questioning: nervous and avoided eye contact.");
 							cout << endl << flush;
+							system("pause");
 							system("cls");
 
 							type_text("Who do you think is the killer? (Type their first name or last name)");
@@ -291,21 +372,30 @@ int main()
 
 							string chooseKiller;
 							cin >> chooseKiller;
+							string names[8] = { "Loretta", "Millar", "Freddy", "Chris", "Dickson", "Snow", "Mrs", "Weston" };
 
-							if (chooseKiller == "Loretta" || chooseKiller == "Millar") {
-								noAnswers++;
-							}
-							else if (chooseKiller == "Freddy" || chooseKiller == "Snow") {
-								noAnswers++;
+							while (chooseKiller != "Loretta" && chooseKiller != "Miller" && chooseKiller != "Freddy" && chooseKiller != "Chris" &&
+								chooseKiller != "Dickson" && chooseKiller != "Snow" && chooseKiller != "Mrs" && chooseKiller != "Weston"){
+								cout << "Character not in story. Try again: ";
+								cin >> chooseKiller;
+								if (chooseKiller == "Loretta" || chooseKiller == "Millar") {
+									noAnswers++;
+								}
+								else if (chooseKiller == "Freddy" || chooseKiller == "Snow") {
+									noAnswers++;
+								}
+
+								else if (chooseKiller == "Chris" || chooseKiller == "Dickson") {
+									rightAnswer++;
+								}
+
+								else if (chooseKiller == "Mrs" || chooseKiller == "Weston") {
+									noAnswers++;
+
+								}
 							}
 
-							else if (chooseKiller == "Chris" || chooseKiller == "Dickson") {
-								rightAnswer++;
-							}
 
-							else if (chooseKiller == "Mrs" || chooseKiller == "Weston") {
-								noAnswers++;
-							}
 						}
 					}
 				}
@@ -314,42 +404,85 @@ int main()
 	}
 
 	if (noAnswers == 3) {
-		cout << "The case remains unsolved.";
+		cout << endl;
+		cout << setw(60) << "The case remains unsolved." << endl;
+		system("pause");
+		cout << endl << flush;
+		system("cls");
+		menu();
+		int option;
+		cin >> option;
+		switch (option) {
+		case 1:
+			startGame();
+			break;
+		case 2:
+			howToPlay();
+			break;
+		case 3:
+			exitGame();
+		default:cout << "Enter a number from 1-3";
+		}
 	}
 
 	else if (yesAnswers > noAnswers && rightAnswer == 0) {
-		cout << "You found lots of clues but you didn't find the murderer";
+		cout << "You found lots of clues but you didn't find the murderer" << endl;
+		system("pause");
+		cout << endl << flush;
+		system("cls");
+		menu();
+		int option;
+		cin >> option;
+		switch (option) {
+		case 1:
+			startGame();
+			break;
+		case 2:
+			howToPlay();
+			break;
+		case 3:
+			exitGame();
+		default:cout << "Enter a number from 1-3";
+		}
 	}
 
 	else if (rightAnswer == 1) {
-		cout << "You solved the case!";
+		cout << "You solved the case!" << endl;
+		system("pause");
+		cout << endl << flush;
+		system("cls");
+		menuSolved();
+		int option;
+		cin >> option;
+		switch (option) {
+		case 1:
+			startGame();
+			break;
+		case 2:
+			howToPlay();
+			break;
+		case 3:
+			exitGame();
+		default:cout << "Enter a number from 1-3";
+		}
 	}
 
 }
 
-
-/*
-int main() {
-
-int x = getkey();
-cin >> x;
-
-cout << setw(50) << "UNSOLVED" << endl;
-
-cout << setw(57) << " _____________________" << endl;
-cout << setw(62) << "│                     │" << endl;
-cout << setw(62) << "│        START        │" << endl;
-cout << setw(62) << "│_____________________│" << endl;
-
-
-cout << setw(57) << " _____________________" << endl;
-cout << setw(62) << "│                     │" << endl;
-cout << setw(62) << "│     HOW TO PLAY     │" << endl;
-cout << setw(62) << "│_____________________│" << endl;
-
-cout << setw(57) << " _____________________" << endl;
-cout << setw(62) << "│                     │" << endl;
-cout << setw(62) << "│      EXIT GAME      │" << endl;
-cout << setw(62) << "│_____________________│" << endl;
+int main()
+{
+	menu();
+	int option;
+	cin >> option;
+	switch (option) {
+	case 1:
+		startGame();
+		break;
+	case 2:
+		howToPlay();
+		break;
+	case 3:
+		exitGame();
+	default:cout << "Enter a number from 1-3";
+	}
 }
-*/
