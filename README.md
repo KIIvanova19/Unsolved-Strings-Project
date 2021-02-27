@@ -4,7 +4,7 @@
 
 ## About Our Repo ![BG_1 (4)](https://user-images.githubusercontent.com/63718762/109393228-2c5f5f80-7929-11eb-8221-9c703f353d35.png)
 
-We wanted to challenge people's thinking and to show that every choice you make, no matter big or small, can have a huge impact on the end result. All you have to do is pay close attention and hope you make the right choice. Can you find out who the true killer is? Download [Unsolved](../blob/master/Unsolved.cpp) and find out! :)
+We wanted to challenge people's thinking and to show that every choice you make, no matter big or small, can have a huge impact on the end result. All you have to do is pay close attention and hope you make the right choice. Can you find out who the true killer is? Download [Unsolved](../master/Unsolved.cpp) and find out! :)
 
 ## Installation ![unknown](https://user-images.githubusercontent.com/63718762/109393150-e30f1000-7928-11eb-918c-04f92e5d7d78.png)
 
