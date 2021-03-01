@@ -257,7 +257,7 @@ void startGame() {
             cout << endl << flush;
             system("cls");
 
-            if (password == "04061998") {
+            if (password == "04061995") {
                 type("You successfully unlock the safe. You find some letters. Opening a few of them you realise that they are fan letters, though not any celebirty or person would like to receive these...they were death threats...");
                 cout << endl << flush;
                 system("cls");
@@ -353,12 +353,12 @@ void startGame() {
                     }
                 }
             }
-            while (password != "04061998")
+            while (password != "04061995")
             {
                 cout << "The password is incorrect: ";
                 cin >> password;
 
-                if (password == "04061998") {
+                if (password == "04061995") {
                     type("You successfully unlock the safe. You find some letters. Opening a few of them you realise that they are fan letters, though not any celebirty or person would like to receive these...they were death threats...");
                     cout << endl << flush;
                     system("cls");
@@ -465,7 +465,6 @@ void startGame() {
             break;
         case 3:
             exitGame();
-        default:cout << "Enter a number from 1-3";
         }
     }
 
